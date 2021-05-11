@@ -1,0 +1,16 @@
+name: 'shortener'
+server: 'http://127.0.0.1:9011'
+user_config:
+  host: '127.0.0.1'
+  port: 9011
+  local: 'zh'
+database:
+  name: 'shorturl'
+  password: 'shorturl_123'
+  user: 'shorturl'
+  type: 'sqlite'
+  host: '127.0.0.1'
+  port: '8836'
+  min_conn: 10
+  max_conn: 100
+  table_prefix: ''

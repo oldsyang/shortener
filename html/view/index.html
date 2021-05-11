@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿浏览器主页搜索</title>
+    <link rel="stylesheet" href="../statics/css/index.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo" style="background-image: url(../statics/img/logo.jpeg)"></div>
+    <div class="input">
+        <input type="text" name="content" placeholder="请输入链接" autocomplete="off" id="search-input">
+<!--        <div class="picker">百度</div>-->
+<!--        <ul class="picker-list">-->
+<!--            <li style="background-image: url(../statics/img/ico_baidu.png)" data-logo="baidu.png">百度</li>-->
+<!--            <li style="background-image: url(../statics/img/ico_sogou.png)" data-logo="sogou.png">搜狗</li>-->
+<!--            <li style="background-image: url(../statics/img/ico_bing.png)" data-logo="bing.png">bing</li>-->
+<!--            <li style="background-image: url(../statics/img/ico_google.ico)" data-logo="google.png">Google</li>-->
+<!--        </ul>-->
+        <div class="hot-list"></div>
+    </div>
+    <div class="search">开始生成</div>
+</div>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="../statics/js/layer.js"></script>
+<script type="text/javascript" src="../statics/js/index.js"></script>
+<script type="text/javascript">
+    $(function () {
+        helangSearch.init();
+        //扩展皮肤
+    })
+</script>
+</body>
+</html>
