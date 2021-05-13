@@ -127,6 +127,9 @@ var helangSearch = {
                         alert("生成失败");
                     }
                     $("#a3").attr("value", data);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    layer.msg('生成失败');
                 }
             })
         });

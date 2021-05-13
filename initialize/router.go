@@ -7,7 +7,7 @@ import (
 )
 
 func Router() *gin.Engine {
-	zap.S().Info("开始启动服务...")
+	zap.S().Info("init router...")
 	router := gin.Default()
 	//router.LoadHTMLGlob("templates/*")
 	routers.InitApi(router)

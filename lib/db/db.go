@@ -66,7 +66,7 @@ func SetupDBConn() {
 
 	sqlDB, err := db.DB()
 	if err != nil {
-		zap.S().Error("connect db server failed.")
+		zap.S().Panic("connect db server failed.")
 	}
 	sqlDB.SetMaxIdleConns(global.ServerConfig.DatabaseConfig.MinConn) // SetMaxIdleConns sets the maximum number of connections in the idle connection pool.
 	sqlDB.SetMaxOpenConns(global.ServerConfig.DatabaseConfig.MaxConn) // SetMaxOpenConns sets the maximum number of open connections to the database.
@@ -76,7 +76,7 @@ func SetupDBConn() {
 func GetDB() *gorm.DB {
 	sqlDB, err := db.DB()
 	if err != nil {
-		fmt.Errorf("connect db server failed.")
+		zap.S().Error("connect db server failed.")
 		NewConnection()
 	}
 	if err := sqlDB.Ping(); err != nil {

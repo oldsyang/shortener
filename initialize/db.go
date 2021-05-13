@@ -11,6 +11,6 @@ func InitDB() {
 	db := db.GetDB()
 	err := db.AutoMigrate(&models.UrlModel{})
 	if err != nil {
-		zap.S().Error("init table error.")
+		zap.S().Panic("init table error.")
 	}
 }

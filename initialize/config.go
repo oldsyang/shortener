@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
+	"go.uber.org/zap"
 	"os"
 	"shortener/global"
 )
@@ -19,6 +20,7 @@ func InitConfig() {
 	if debug {
 		configFileName = "dev.yaml"
 	}
+	zap.S().Infof("启动配置文件：%s", configFileName)
 	file,_ := os.Getwd()
 	configFileName = fmt.Sprintf("%s/%s", file, configFileName)
 
@@ -34,7 +36,7 @@ func InitConfig() {
 	// viper 动态监听
 	v.WatchConfig()
 	v.OnConfigChange(func(e fsnotify.Event) {
-		fmt.Println("config changed")
+		zap.S().Infof("%s config changed", configFileName)
 		_ = v.ReadInConfig()
 		_ = v.Unmarshal(global.ServerConfig)
 	})
